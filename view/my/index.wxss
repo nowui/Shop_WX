@@ -1,0 +1,13 @@
+.order-item {
+    float: left;
+    width: 25%;
+    font-size: 12px;
+    text-align: center;
+}
+.order-item-icon {
+    height: 35px;
+}
+.order-item-icon-image {
+    width: 30px;
+    height: 30px;
+}

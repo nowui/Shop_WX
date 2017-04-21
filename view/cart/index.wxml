@@ -1,0 +1,10 @@
+<view class="container">
+    <view class="footer">
+        <view class="footer-total">
+
+        </view>
+        <view class="footer-balance">
+            去结算
+        </view>
+    </view>
+</view>
