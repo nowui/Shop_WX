@@ -1,3 +1,58 @@
 <view class="container">
-
+    <view class="header"></view>
+    <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="false" interval="2000" duration="500">
+            <swiper-item>
+                <image style="width: 100%; background-color: #ffffff;" />
+            </swiper-item>
+            <swiper-item>
+                <image style="width: 100%; background-color: #eeeeee;" />
+            </swiper-item>
+            <swiper-item>
+                <image style="width: 100%; background-color: #ffffff;" />
+            </swiper-item>
+            <swiper-item>
+                <image style="width: 100%; background-color: #eeeeee;" />
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="index-category margin-top">
+        <navigator url="/view/category/index" class="index-category-item">
+            <view class="index-category-item-icon">
+                <image class="index-category-item-icon-image" src="" />
+            </view>
+            肠内营养
+        </navigator>
+        <navigator url="/view/category/index" class="index-category-item">
+            <view class="index-category-item-icon">
+                <image class="index-category-item-icon-image" src="" />
+            </view>
+            快康系列
+        </navigator>
+        <navigator url="/view/category/index" class="index-category-item">
+            <view class="index-category-item-icon">
+                <image class="index-category-item-icon-image" src="" />
+            </view>
+            特殊奶粉
+        </navigator>
+        <navigator url="/view/category/index" class="index-category-item">
+            <view class="index-category-item-icon">
+                <image class="index-category-item-icon-image" src="" />
+            </view>
+            理疗辅助
+        </navigator>
+        <navigator url="/view/category/index" class="index-category-item">
+            <view class="index-category-item-icon">
+                <image class="index-category-item-icon-image" src="" />
+            </view>
+            补血系列
+        </navigator>
+    </view>
+    <view class="index-product margin-top">
+        <navigator url="/view/product/index" class="index-product-cart">
+            <image class="index-product-cart-image" src="" />
+            <view class="index-product-cart-name">糖霜饼干视频</view>
+            <view class="index-product-cart-remark">课程内容从简铺面至高级浮雕都会详细讲解</view>
+        </navigator>
+    </view>
 </view>

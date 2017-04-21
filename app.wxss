@@ -9,9 +9,22 @@
     font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
     background: #e8e8ed;
     font-size: 12px;
-} 
-.margin-top {
-    margin-top: 10px;
+}
+.header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+}
+.header:after {
+    content: " ";
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 1px;
+    border-bottom: 1rpx solid #b2b2b2;
+    color: #D9D9D9;
 }
 .footer {
     width: 100%;
@@ -77,4 +90,7 @@
     flex: 1;
     color: #1AAD19;
     text-align: right;
+}
+.margin-top {
+    margin-top: 10px;
 }

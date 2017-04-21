@@ -1,0 +1,117 @@
+<view class="container">
+    <view class="header"></view>
+    <view class="container">
+        <view class="header"></view>
+        <scroll-view class="category-left" scroll-y="true">
+            <view class="category-left-item {{index == 0 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="0">所有视频</view>
+            <view class="category-left-item {{index == 1 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="1">蛋糕</view>
+            <view class="category-left-item {{index == 2 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="2">饼干</view>
+            <view class="category-left-item {{index == 3 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="3">点心</view>
+            <view class="category-left-item {{index == 4 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="4">甜点</view>
+            <view class="category-left-item-bottom" style="height: {{windowHeight - 50 * 6}}px;"></view>
+        </scroll-view>
+        <scroll-view class="category-right" scroll-y="true">
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-item" bindtap="handleProduct">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+                <view class="category-right-item-name">糖霜饼干视频</view>
+                <view class="category-right-item-price">￥320</view>
+            </view>
+            <view class="category-right-bottom"></view>
+        </scroll-view>
+    </view>
+</view>

@@ -1,0 +1,39 @@
+<view class="container">
+    <view class="header"></view>
+    <view class="page-section page-section-spacing swiper">
+        <swiper indicator-dots="{{indicatorDots}}" autoplay="false" interval="2000" duration="500">
+            <swiper-item>
+                <image style="width: 100%; background-color: #ffffff;" />
+            </swiper-item>
+            <swiper-item>
+                <image style="width: 100%; background-color: #eeeeee;" />
+            </swiper-item>
+            <swiper-item>
+                <image style="width: 100%; background-color: #ffffff;" />
+            </swiper-item>
+            <swiper-item>
+                <image style="width: 100%; background-color: #eeeeee;" />
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="footer">
+        <view class="footer-home">
+            <view class="footer-icon">
+                <image class="footer-icon-image" src="/image/home.png" />
+            </view>
+            首页
+        </view>
+        <view class="footer-favor">
+            <view class="footer-icon">
+                <image class="footer-icon-image" src="/image/favor.png" />
+            </view>
+            收藏
+        </view>
+        <view class="footer-cart">
+            加入购物车
+        </view>
+        <view class="footer-buy">
+            立即购买
+        </view>
+    </view>
+</view>

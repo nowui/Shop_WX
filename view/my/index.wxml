@@ -1,4 +1,5 @@
 <view class="container">
+    <view class="header"></view>
     <view class="weui-panel weui-panel_access">
       <view class="weui-panel__bd">
           <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
