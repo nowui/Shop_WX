@@ -3,8 +3,9 @@
     "view/index/index",
     "view/cart/index",
     "view/my/index",
-    "view/product/index",
     "view/category/index",
+    "view/product/index",
+    "view/order/index",
     "view/deliver/index",
     "view/deliver/detail"
   ],

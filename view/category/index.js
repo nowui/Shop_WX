@@ -4,15 +4,15 @@ Page({
         windowHeight: 0,
         index: 0
     },
-    onLoad: function (options) {
-        // wx.getSystemInfo({
-        //     success: function (res) {
-        //         that.setData({
-        //             windowWidth: res.windowWidth,
-        //             windowHeight: res.windowHeight
-        //         });
-        //     }
-        // });
+    onLoad: function () {
+        wx.getSystemInfo({
+            success: function (res) {
+                this.setData({
+                    windowWidth: res.windowWidth,
+                    windowHeight: res.windowHeight
+                });
+            }.bind(this)
+        });
     },
     onReady: function () {
 
@@ -38,11 +38,6 @@ Page({
     handleCategory: function (event) {
         this.setData({
             index: event.target.dataset.id
-        });
-    },
-    handleProduct: function (event) {
-        wx.navigateTo({
-            url: 'product/index'
         });
     }
 });

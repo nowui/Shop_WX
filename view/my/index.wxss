@@ -1,8 +1,16 @@
+.order {
+    padding: 0px;
+}
+.order-info {
+    font-size: 12px;
+}
 .order-item {
     float: left;
     width: 25%;
     font-size: 12px;
     text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 .order-item-icon {
     height: 35px;

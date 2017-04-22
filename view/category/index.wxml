@@ -11,106 +11,16 @@
             <view class="category-left-item-bottom" style="height: {{windowHeight - 50 * 6}}px;"></view>
         </scroll-view>
         <scroll-view class="category-right" scroll-y="true">
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+            <navigator url="/view/product/index" class="category-right-item">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="" />
                 <view class="category-right-item-name">糖霜饼干视频</view>
                 <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
+            </navigator>
+            <navigator url="/view/product/index" class="category-right-item">
+                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="" />
                 <view class="category-right-item-name">糖霜饼干视频</view>
                 <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
-            <view class="category-right-item" bindtap="handleProduct">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="../image/product.jpg" />
-                <view class="category-right-item-name">糖霜饼干视频</view>
-                <view class="category-right-item-price">￥320</view>
-            </view>
+            </navigator>
             <view class="category-right-bottom"></view>
         </scroll-view>
     </view>

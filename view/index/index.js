@@ -1,13 +1,17 @@
 Page({
     data: {
-
+        windowWidth: 0,
+        windowHeight: 0
     },
-    onLoad: function (options) {
-        // getApp().getUserInfo(function (userInfo) {
-        //     this.setData({
-        //         userInfo: userInfo
-        //     })
-        // }.bind(this));
+    onLoad: function () {
+        wx.getSystemInfo({
+            success: function (res) {
+                this.setData({
+                    windowWidth: res.windowWidth,
+                    windowHeight: res.windowHeight
+                });
+            }.bind(this)
+        });
     },
     onReady: function () {
 

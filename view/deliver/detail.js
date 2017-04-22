@@ -11,7 +11,7 @@ Page({
         area: "",
         province_city_area: [0, 0, 0]
     },
-    onLoad: function (options) {
+    onLoad: function () {
         var province_list = [];
         var city_list = [];
         var area_list = [];

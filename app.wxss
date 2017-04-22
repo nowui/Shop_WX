@@ -31,6 +31,7 @@
     height: 50px;
     position: fixed;
     bottom: 0;
+    z-index: 99999;
 }
 .footer:after {
     content: " ";
@@ -93,4 +94,17 @@
 }
 .margin-top {
     margin-top: 10px;
+}
+.weui-navbar__item.weui-bar__item_on {
+    color: #c81623;
+}
+.weui-navbar__slider {
+    background-color: #c81623;
+}
+.weui-tab {
+    background-color: #ffffff;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
 }

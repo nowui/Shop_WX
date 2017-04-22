@@ -1,53 +1,49 @@
 .category-left{
-  width: 25%;
-  height: 100%;
-  background: #ffffff;
+    width: 25%;
+    height: 100%;
+    background: #ffffff;
 }
 .category-left-item {
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  border-bottom: #dddddd 1rpx solid;
-  border-right: #dddddd 1rpx solid;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: #dddddd 1rpx solid;
+    border-right: #dddddd 1rpx solid;
 }
 .category-left-item-active {
-  background: #e8e8ed;
-  border-left: #000000 2px solid;
-  border-right: #e8e8ed 1rpx solid;
+    background: #e8e8ed;
+    border-left: #c81623 2px solid;
+    border-right: #e8e8ed 1rpx solid;
 }
 
 .category-left-item-bottom {
-  border-right: #dddddd 1rpx solid;
+    border-right: #dddddd 1rpx solid;
 }
 .category-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 75%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 75%;
+    height: 100%;
 }
 .category-right-item {
-  float: left;
-  width: 46%;
-  border: #dddddd 1rpx solid;
-  margin: 2.5% 0 0 2.5%;
-  background: #ffffff;
-  background-repeat: no-repeat;
-  background-size: contain;
+    float: left;
+    width: 46%;
+    border: #dddddd 1rpx solid;
+    margin: 2.5% 0 0 2.5%;
+    background: #ffffff;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 .category-right-item-name {
-  height: 20px;
-  line-height: 20px;
-  padding-left: 5px;
+    padding-left: 5px;
 }
 .category-right-item-price {
-  color: red;
-  height: 20px;
-  line-height: 20px;
-  padding-left: 3px;
+    color: #c81623;
+    padding-left: 3px;
 }
 .category-right-bottom {
-  float: left;
-  width: 100%;
-  padding-top: 2.5%;
+    float: left;
+    width: 100%;
+    padding-top: 2.5%;
 }

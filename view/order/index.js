@@ -1,24 +1,21 @@
 Page({
     data: {
-        windowWidth: 0,
-        windowHeight: 0,
-        tabs: ["商品介绍", "规格参数", "售后保障"],
+        tabs: ["全部订单", "代付款", "待收货", "已收货"],
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
         sliderWidth: 0
     },
     onLoad: function () {
+        var that = this;
         wx.getSystemInfo({
-            success: function (res) {
-                this.setData({
-                    windowWidth: res.windowWidth,
-                    windowHeight: res.windowHeight,
-                    sliderLeft: (res.windowWidth / this.data.tabs.length - res.windowWidth / this.data.tabs.length) / 2,
-                    sliderOffset: res.windowWidth / this.data.tabs.length * this.data.activeIndex,
-                    sliderWidth: res.windowWidth / this.data.tabs.length
+            success: function(res) {
+                that.setData({
+                    sliderLeft: (res.windowWidth / that.data.tabs.length - res.windowWidth / that.data.tabs.length) / 2,
+                    sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex,
+                    sliderWidth: res.windowWidth / that.data.tabs.length
                 });
-            }.bind(this)
+            }
         });
     },
     onReady: function () {

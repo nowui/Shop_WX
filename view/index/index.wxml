@@ -1,7 +1,7 @@
 <view class="container">
     <view class="header"></view>
     <view class="page-section page-section-spacing swiper">
-        <swiper indicator-dots="{{indicatorDots}}" autoplay="false" interval="2000" duration="500">
+        <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="2000" duration="500">
             <swiper-item>
                 <image style="width: 100%; background-color: #ffffff;" />
             </swiper-item>
@@ -49,10 +49,30 @@
         </navigator>
     </view>
     <view class="index-product margin-top">
-        <navigator url="/view/product/index" class="index-product-cart">
-            <image class="index-product-cart-image" src="" />
-            <view class="index-product-cart-name">糖霜饼干视频</view>
-            <view class="index-product-cart-remark">课程内容从简铺面至高级浮雕都会详细讲解</view>
+        <navigator url="/view/product/index" class="index-product-card">
+            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
+            <view class="index-product-card-name">糖霜饼干视频</view>
+            <view class="index-product-card-price">￥320</view>
+        </navigator>
+        <navigator url="/view/product/index" class="index-product-card">
+            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
+            <view class="index-product-card-name">糖霜饼干视频</view>
+            <view class="index-product-card-price">￥320</view>
+        </navigator>
+        <navigator url="/view/product/index" class="index-product-card">
+            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
+            <view class="index-product-card-name">糖霜饼干视频</view>
+            <view class="index-product-card-price">￥320</view>
+        </navigator>
+        <navigator url="/view/product/index" class="index-product-card">
+            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
+            <view class="index-product-card-name">糖霜饼干视频</view>
+            <view class="index-product-card-price">￥320</view>
+        </navigator>
+        <navigator url="/view/product/index" class="index-product-card">
+            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
+            <view class="index-product-card-name">糖霜饼干视频</view>
+            <view class="index-product-card-price">￥320</view>
         </navigator>
     </view>
 </view>

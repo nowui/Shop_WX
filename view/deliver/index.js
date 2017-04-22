@@ -2,7 +2,7 @@ Page({
     data: {
 
     },
-    onLoad: function (options) {
+    onLoad: function () {
 
     },
     onReady: function () {

@@ -19,35 +19,35 @@
       </view>
     </view>
     <view class="weui-cells weui-cells_after-title margin-top">
-        <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <navigator url="/view/order/index" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">我的订单</view>
-            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            <view class="weui-cell__ft weui-cell__ft_in-access order-info">查看全部订单</view>
         </navigator>
-        <view class="weui-media-box weui-media-box_appmsg">
-          <view class="order-item">
+        <view class="weui-media-box weui-media-box_appmsg order">
+          <navigator url="/view/order/index" class="order-item">
               <view class="order-item-icon">
                   <image class="order-item-icon-image" src="/image/pay.png" />
               </view>
               代付款
-          </view>
-          <view class="order-item">
+          </navigator>
+          <navigator url="/view/order/index" class="order-item">
               <view class="order-item-icon">
                   <image class="order-item-icon-image" src="/image/send.png" />
               </view>
               代发货
-          </view>
-          <view class="order-item">
+          </navigator>
+          <navigator url="/view/order/index" class="order-item">
               <view class="order-item-icon">
                   <image class="order-item-icon-image" src="/image/deliver.png" />
               </view>
               带收货
-          </view>
-          <view class="order-item">
+          </navigator>
+          <navigator url="/view/order/index" class="order-item">
               <view class="order-item-icon">
                   <image class="order-item-icon-image" src="/image/comment.png" />
               </view>
               已完成
-          </view>
+          </navigator>
         </view>
     </view>
     <view class="weui-cells weui-cells_after-title margin-top">
