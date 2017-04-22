@@ -1,4 +1,4 @@
-var china = require("../../util/china.js");
+const china = require("../../util/china.js");
 
 Page({
     data: {

@@ -1,7 +1,9 @@
+<import src="/component/quantity/index.wxml" />
+
 <view class="container">
     <view class="header"></view>
     <view class="page-section page-section-spacing swiper">
-        <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="2000" duration="500" style="height: {{windowWidth}}px;">
+        <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="5000" duration="500" style="height: {{windowWidth}}px;">
             <swiper-item>
                 <image style="width: 100%; height: {{windowWidth}}px; background-color: #ffffff;" />
             </swiper-item>
@@ -25,7 +27,7 @@
             <view class="weui-cell__bd">已选</view>
         </view>
         <view class="weui-media-box weui-media-box_appmsg">
-          -
+            <template is="zan-quantity" data="{{ ...quantity1, componentId: 'quantity1' }}" />
         </view>
     </view>
     <view class="weui-tab margin-top">

@@ -2,7 +2,7 @@
     <view class="header"></view>
     <view class="footer">
         <view class="footer-total">
-
+            <icon class="checkbox" type="circle"/>
         </view>
         <view class="footer-balance">
             去结算

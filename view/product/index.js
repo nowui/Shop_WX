@@ -1,8 +1,15 @@
-Page({
+var Quantity = require('../../component/quantity/index');;
+
+Page(Object.assign({}, Quantity, {
     data: {
+        quantity1: {
+            quantity: 1,
+            min: 1,
+            max: 20
+        },
         windowWidth: 0,
         windowHeight: 0,
-        tabs: ["商品介绍", "规格参数", "售后保障"],
+        tabs: ["商品介绍", "用法用量", "用户评价"],
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,
@@ -47,5 +54,13 @@ Page({
             sliderOffset: e.currentTarget.offsetLeft,
             activeIndex: e.currentTarget.id
         });
+    },
+    handleZanQuantityChange(e) {
+        var componentId = e.componentId;
+        var quantity = e.quantity;
+
+        this.setData({
+            [`${componentId}.quantity`]: quantity
+        });
     }
-});
+}));

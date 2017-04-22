@@ -1,7 +1,7 @@
 <view class="container">
     <view class="header"></view>
     <view class="page-section page-section-spacing swiper">
-        <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="2000" duration="500">
+        <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="5000" duration="500">
             <swiper-item>
                 <image style="width: 100%; background-color: #ffffff;" />
             </swiper-item>
@@ -18,32 +18,32 @@
     </view>
     <view class="index-category margin-top">
         <navigator url="/view/category/index" class="index-category-item">
-            <view class="index-category-item-icon">
-                <image class="index-category-item-icon-image" src="" />
+            <view class="index-category-item-icon" style="background: #73b4ef;">
+                <image class="index-category-item-icon-image" src="/image/discover.png" />
             </view>
             肠内营养
         </navigator>
         <navigator url="/view/category/index" class="index-category-item">
-            <view class="index-category-item-icon">
-                <image class="index-category-item-icon-image" src="" />
+            <view class="index-category-item-icon" style="background: #e78ab0;">
+                <image class="index-category-item-icon-image" src="/image/form.png" />
             </view>
             快康系列
         </navigator>
         <navigator url="/view/category/index" class="index-category-item">
-            <view class="index-category-item-icon">
-                <image class="index-category-item-icon-image" src="" />
+            <view class="index-category-item-icon" style="background: #7acfa6;">
+                <image class="index-category-item-icon-image" src="/image/present.png" />
             </view>
             特殊奶粉
         </navigator>
         <navigator url="/view/category/index" class="index-category-item">
-            <view class="index-category-item-icon">
-                <image class="index-category-item-icon-image" src="" />
+            <view class="index-category-item-icon" style="background: #ffcb63;">
+                <image class="index-category-item-icon-image" src="/image/punch.png" />
             </view>
             理疗辅助
         </navigator>
         <navigator url="/view/category/index" class="index-category-item">
-            <view class="index-category-item-icon">
-                <image class="index-category-item-icon-image" src="" />
+            <view class="index-category-item-icon" style="background: #9f8bea;">
+                <image class="index-category-item-icon-image" src="/image/shop.png" />
             </view>
             补血系列
         </navigator>

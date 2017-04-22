@@ -8,8 +8,8 @@
     float: left;
     width: 20%;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 8px;
+    padding-top: 10px;
+    padding-bottom: 8px;
 }
 .index-category-item-icon {
     position: relative;
@@ -22,7 +22,7 @@
     background: #000000;
 }
 .index-category-item-icon-image {
-    margin-top: 8px;
+    margin-top: 10px;
     width: 30px;
     height: 30px;
 }

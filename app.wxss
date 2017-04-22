@@ -1,4 +1,5 @@
 @import 'style/weui.wxss';
+@import 'component/quantity/index.wxss';
 
 .container {
     position: absolute;

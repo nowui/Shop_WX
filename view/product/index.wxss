@@ -5,11 +5,12 @@
     padding: 10px;
 }
 .product-info-name {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: bold;
 }
 .product-info-price {
     color: #c81623;
+    font-size: 16px;
     margin-top: 5px;
     margin-left: -2px;
 }
