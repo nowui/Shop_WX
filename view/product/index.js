@@ -9,7 +9,7 @@ Page(Object.assign({}, Quantity, {
         },
         windowWidth: 0,
         windowHeight: 0,
-        tabs: ["商品介绍", "用法用量", "用户评价"],
+        tabs: ["商品介绍", "用户评价"],
         activeIndex: 0,
         sliderOffset: 0,
         sliderLeft: 0,

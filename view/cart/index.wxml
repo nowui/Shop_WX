@@ -2,7 +2,12 @@
     <view class="header"></view>
     <view class="footer">
         <view class="footer-total">
-            <icon class="checkbox" type="circle"/>
+            <view class="footer-total-checkbox" bindtap="handleAll">
+                <icon class="checkbox" type="{{is_all ? 'success' : 'circle'}}" color="#c81623"/>
+            </view>
+            <view class="footer-total-text">
+                总计: ￥320.00
+            </view>
         </view>
         <view class="footer-balance">
             去结算

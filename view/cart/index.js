@@ -1,6 +1,6 @@
 Page({
     data: {
-
+        is_all: false
     },
     onLoad: function () {
 
@@ -25,5 +25,10 @@ Page({
     },
     onShareAppMessage: function () {
 
+    },
+    handleAll: function () {
+        this.setData({
+            is_all: !this.data.is_all
+        });
     }
 });
