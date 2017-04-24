@@ -3,21 +3,17 @@
     <view class="container">
         <view class="header"></view>
         <scroll-view class="category-left" scroll-y="true">
-            <view class="category-left-item {{index == 0 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="0">所有视频</view>
-            <view class="category-left-item {{index == 1 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="1">蛋糕</view>
-            <view class="category-left-item {{index == 2 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="2">饼干</view>
-            <view class="category-left-item {{index == 3 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="3">点心</view>
-            <view class="category-left-item {{index == 4 ? 'category-left-item-active' : ''}}" bindtap="handleCategory" data-id="4">甜点</view>
+            <view class="category-left-item {{category_id == category.category_id ? 'category-left-item-active' : ''}}" wx:for="{{category_list}}" wx:for-item="category" wx:key="{{category.category_id}}" bindtap="handleCategory" id="{{category.category_id}}">{{category.category_name}}</view>
             <view class="category-left-item-bottom" style="height: {{windowHeight - 50 * 6}}px;"></view>
         </scroll-view>
         <scroll-view class="category-right" scroll-y="true">
             <navigator url="/view/product/index" class="category-right-item">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="" />
+                <image style="width: {{window_width * 0.75 * 0.46}}px; height: {{window_width * 0.75 * 0.46}}px;" src="" />
                 <view class="category-right-item-name">糖霜饼干视频</view>
                 <view class="category-right-item-price">￥320</view>
             </navigator>
             <navigator url="/view/product/index" class="category-right-item">
-                <image style="width: {{windowWidth * 0.75 * 0.46}}px; height: {{windowWidth * 0.75 * 0.46}}px;" src="" />
+                <image style="width: {{window_width * 0.75 * 0.46}}px; height: {{window_width * 0.75 * 0.46}}px;" src="" />
                 <view class="category-right-item-name">糖霜饼干视频</view>
                 <view class="category-right-item-price">￥320</view>
             </navigator>

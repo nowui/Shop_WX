@@ -1,37 +1,37 @@
+const constant = require("../../util/constant.js");
+const http = require("../../util/http.js");
+
 Page({
     data: {
-        windowWidth: 0,
-        windowHeight: 0
+        window_width: 0,
+        product_list: []
     },
     onLoad: function () {
         wx.getSystemInfo({
             success: function (res) {
                 this.setData({
-                    windowWidth: res.windowWidth,
-                    windowHeight: res.windowHeight
+                    window_width: res.windowWidth
                 });
             }.bind(this)
         });
 
-        // wx.request({
-        //     url: 'http://localhost:8080/product/list',
-        //     method: 'POST',
-        //     header: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json',
-        //         'Token': '',
-        //         'Platform': 'WX',
-        //         'Version': '1.0.0'
-        //     },
-        //     data: {
-        //         product_name: '',
-        //         page_index: 1,
-        //         page_size: 10
-        //     },
-        //     success: function(res) {
-        //         console.log(res.data)
-        //     }
-        // });
+        http.request({
+            url: '/product/list',
+            data: {
+                product_name: '',
+                page_index: 1,
+                page_size: 10
+            },
+            success: function (data) {
+                for (let i = 0; i < data.length; i++) {
+                    data[i].product_image_original = constant.host + JSON.parse(data[i].product_image_original)[0];
+                }
+
+                this.setData({
+                    product_list: data
+                });
+            }.bind(this)
+        });
     },
     onReady: function () {
 

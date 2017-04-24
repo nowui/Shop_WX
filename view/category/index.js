@@ -1,15 +1,16 @@
+const constant = require("../../util/constant.js");
+
 Page({
     data: {
-        windowWidth: 0,
-        windowHeight: 0,
-        index: 0
+        window_width: 0,
+        category_list: constant.category_list,
+        category_id: 0
     },
     onLoad: function () {
         wx.getSystemInfo({
             success: function (res) {
                 this.setData({
-                    windowWidth: res.windowWidth,
-                    windowHeight: res.windowHeight
+                    window_width: res.windowWidth
                 });
             }.bind(this)
         });
@@ -37,7 +38,7 @@ Page({
     },
     handleCategory: function (event) {
         this.setData({
-            index: event.target.dataset.id
+            category_id: event.currentTarget.id
         });
     }
 });

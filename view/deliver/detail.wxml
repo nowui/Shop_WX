@@ -38,7 +38,7 @@
             <view class="weui-cell weui-cell_switch">
                 <view class="weui-cell__bd">设为默认地址</view>
                 <view class="weui-cell__ft">
-                    <switch />
+                    <switch color="#c81623"/>
                 </view>
             </view>
         </view>

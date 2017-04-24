@@ -47,32 +47,18 @@
             </view>
             补血系列
         </navigator>
+        <navigator url="/view/category/index" class="index-category-item">
+            <view class="index-category-item-icon" style="background: #fd666b;">
+                <image class="index-category-item-icon-image" src="/image/apps.png" />
+            </view>
+            所有商品
+        </navigator>
     </view>
     <view class="index-product margin-top">
-        <navigator url="/view/product/index" class="index-product-card">
-            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
-            <view class="index-product-card-name">糖霜饼干视频</view>
-            <view class="index-product-card-price">￥320</view>
-        </navigator>
-        <navigator url="/view/product/index" class="index-product-card">
-            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
-            <view class="index-product-card-name">糖霜饼干视频</view>
-            <view class="index-product-card-price">￥320</view>
-        </navigator>
-        <navigator url="/view/product/index" class="index-product-card">
-            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
-            <view class="index-product-card-name">糖霜饼干视频</view>
-            <view class="index-product-card-price">￥320</view>
-        </navigator>
-        <navigator url="/view/product/index" class="index-product-card">
-            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
-            <view class="index-product-card-name">糖霜饼干视频</view>
-            <view class="index-product-card-price">￥320</view>
-        </navigator>
-        <navigator url="/view/product/index" class="index-product-card">
-            <image class="index-product-card-image" style="width: {{windowWidth - 20}}px; height: {{windowWidth - 20}}px;" src="" />
-            <view class="index-product-card-name">糖霜饼干视频</view>
-            <view class="index-product-card-price">￥320</view>
+        <navigator url="/view/product/index?product_id={{product.product_id}}" class="index-product-card" wx:for="{{product_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
+            <image class="index-product-card-image" style="width: {{window_width - 20}}px; height: {{window_width - 20}}px;" src="{{product.product_image_original}}" />
+            <view class="index-product-card-name">{{product.product_name}}</view>
+            <view class="index-product-card-price">￥{{product.product_price}}</view>
         </navigator>
     </view>
 </view>

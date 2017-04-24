@@ -1,29 +1,62 @@
-var Quantity = require('../../component/quantity/index');;
+const constant = require("../../util/constant.js");
+const http = require("../../util/http.js");
+const storage = require("../../util/storage.js");
+const Quantity = require('../../component/quantity/index');
+const htmlToWxml = require('../../util/htmlToWxml.js');
 
 Page(Object.assign({}, Quantity, {
     data: {
-        quantity1: {
+        product_quantity: {
             quantity: 1,
             min: 1,
-            max: 20
+            max: 99999
         },
-        windowWidth: 0,
-        windowHeight: 0,
-        tabs: ["商品介绍", "用户评价"],
-        activeIndex: 0,
-        sliderOffset: 0,
-        sliderLeft: 0,
-        sliderWidth: 0
+        window_width: 0,
+        tab_index: 0,
+        slider_offset: 0,
+        slider_left: 0,
+        slider_width: 0,
+        sku_id: '',
+        product_id: '',
+        product_name: '',
+        product_price: 0.00,
+        product_image: '',
+        product_image_list: [],
+        product_content: [],
+        cart_count: storage.getCart().length
     },
-    onLoad: function () {
+    onLoad: function (option) {
+        http.request({
+            url: '/product/find',
+            data: {
+                // product_id: option.product_id,
+                product_id: '9f813c2d34f746f09b75661bb5278616'
+            },
+            success: function (data) {
+                let product_image_list = JSON.parse(data.product_image_list_original);
+                for (let i = 0; i < product_image_list.length; i++) {
+                    product_image_list[i] = constant.host + product_image_list[i];
+                }
+
+                this.setData({
+                    sku_id: data.sku_list[0].sku_id,
+                    product_id: data.product_id,
+                    product_name: data.product_name,
+                    product_price: JSON.parse(data.sku_list[0].product_price)[0].product_price.toFixed(2),
+                    product_image: data.product_image,
+                    product_image_list: product_image_list,
+                    product_content: htmlToWxml.html2json(data.product_content)
+                });
+            }.bind(this)
+        });
+
         wx.getSystemInfo({
             success: function (res) {
                 this.setData({
-                    windowWidth: res.windowWidth,
-                    windowHeight: res.windowHeight,
-                    sliderLeft: (res.windowWidth / this.data.tabs.length - res.windowWidth / this.data.tabs.length) / 2,
-                    sliderOffset: res.windowWidth / this.data.tabs.length * this.data.activeIndex,
-                    sliderWidth: res.windowWidth / this.data.tabs.length
+                    window_width: res.windowWidth,
+                    slider_left: (res.windowWidth / 2 - res.windowWidth / 2) / 2,
+                    slider_offset: res.windowWidth / 2 * this.data.tab_index,
+                    slider_width: res.windowWidth / 2
                 });
             }.bind(this)
         });
@@ -49,18 +82,73 @@ Page(Object.assign({}, Quantity, {
     onShareAppMessage: function () {
 
     },
-    tabClick: function (e) {
+    handleTab: function (event) {
         this.setData({
-            sliderOffset: e.currentTarget.offsetLeft,
-            activeIndex: e.currentTarget.id
+            slider_offset: event.currentTarget.offsetLeft,
+            tab_index: event.currentTarget.id
         });
     },
-    handleZanQuantityChange(e) {
-        var componentId = e.componentId;
-        var quantity = e.quantity;
+    handleZanQuantityChange(event) {
+        var componentId = event.componentId;
+        var quantity = event.quantity;
 
         this.setData({
             [`${componentId}.quantity`]: quantity
         });
+    },
+    handleImageLoad: function (event) {
+        var width = event.detail.width;
+        var height = event.detail.height;
+        var index = event.currentTarget.dataset.index;
+        this.data.product_content[index].attr.height = (height / width) * wx.getSystemInfoSync().windowWidth;
+        this.setData({
+            product_content: this.data.product_content
+        });
+    },
+    handleCart: function () {
+        wx.switchTab({
+            url: '/view/cart/index'
+        })
+    },
+    handleFavor: function () {
+        wx.showToast({
+            title: '收藏成功',
+            icon: 'success',
+            duration: 1500
+        })
+    },
+    handleAddCart: function () {
+        if (this.data.product_id == '') {
+            return;
+        }
+
+        storage.addCart({
+            sku_id: this.data.sku_id,
+            product_id: this.data.product_id,
+            product_name: this.data.product_name,
+            product_image: this.data.product_image,
+            product_price: this.data.product_price,
+            product_quantity: this.data.product_quantity.quantity,
+            product_stock: this.data.product_quantity.max
+        });
+
+        this.setData({
+            cart_count: storage.getCart().length
+        });
+    },
+    handleBuy: function () {
+        if (this.data.product_id == '') {
+            return;
+        }
+
+        storage.addProduct([{
+            sku_id: this.data.sku_id,
+            product_id: this.data.product_id,
+            product_name: this.data.product_name,
+            product_image: this.data.product_image,
+            product_price: this.data.product_price,
+            product_quantity: this.data.product_quantity.quantity,
+            product_stock: this.data.product_quantity.max
+        }]);
     }
 }));
