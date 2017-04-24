@@ -4,9 +4,12 @@ const http = require("../../util/http.js");
 Page({
     data: {
         window_width: 0,
+        category_list: [],
         product_list: []
     },
     onLoad: function () {
+        // wx.clearStorage();
+        
         wx.getSystemInfo({
             success: function (res) {
                 this.setData({

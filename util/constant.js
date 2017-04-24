@@ -1,6 +1,6 @@
 const constant = {
-    host: 'https://localhost:8443',
-    // host: 'https://api.jiyiguan.nowui.com',
+    // host: 'https://localhost:8443',
+    host: 'https://api.jiyiguan.nowui.com',
     platform: 'WX',
     version: '1.0.0',
     color: '#c81623',

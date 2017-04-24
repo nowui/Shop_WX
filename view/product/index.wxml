@@ -17,7 +17,7 @@
         <view class="weui-cell weui-cell_access" hover-class="weui-cell_active">
             <view class="weui-cell__bd">已选：{{product_quantity.quantity}}个</view>
         </view>
-        <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box weui-media-box_appmsg" style="height: 33px;">
             <template is="zan-quantity" data="{{ ...product_quantity, componentId: 'product_quantity' }}" />
         </view>
     </view>

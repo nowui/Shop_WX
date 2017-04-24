@@ -20,17 +20,17 @@ Page(Object.assign({}, Quantity, {
         product_id: '',
         product_name: '',
         product_price: 0.00,
-        product_image: '',
+        product_image: [],
         product_image_list: [],
         product_content: [],
-        cart_count: storage.getCart().length
+        cart_count: []
     },
     onLoad: function (option) {
         http.request({
             url: '/product/find',
             data: {
-                // product_id: option.product_id,
-                product_id: '9f813c2d34f746f09b75661bb5278616'
+                product_id: option.product_id,
+                // product_id: '9f813c2d34f746f09b75661bb5278616'
             },
             success: function (data) {
                 let product_image_list = JSON.parse(data.product_image_list_original);
@@ -43,7 +43,7 @@ Page(Object.assign({}, Quantity, {
                     product_id: data.product_id,
                     product_name: data.product_name,
                     product_price: JSON.parse(data.sku_list[0].product_price)[0].product_price.toFixed(2),
-                    product_image: data.product_image,
+                    product_image: JSON.parse(data.product_image),
                     product_image_list: product_image_list,
                     product_content: htmlToWxml.html2json(data.product_content)
                 });
@@ -65,7 +65,9 @@ Page(Object.assign({}, Quantity, {
 
     },
     onShow: function () {
-
+        this.setData({
+            cart_count: storage.getCart().length
+        });
     },
     onHide: function () {
 
@@ -115,7 +117,7 @@ Page(Object.assign({}, Quantity, {
             title: '收藏成功',
             icon: 'success',
             duration: 1500
-        })
+        });
     },
     handleAddCart: function () {
         if (this.data.product_id == '') {
@@ -126,15 +128,25 @@ Page(Object.assign({}, Quantity, {
             sku_id: this.data.sku_id,
             product_id: this.data.product_id,
             product_name: this.data.product_name,
-            product_image: this.data.product_image,
+            product_image: constant.host + this.data.product_image[0],
             product_price: this.data.product_price,
-            product_quantity: this.data.product_quantity.quantity,
+            product_quantity: {
+                quantity: this.data.product_quantity.quantity,
+                min: 1,
+                max: 99999
+            },
             product_stock: this.data.product_quantity.max
         });
 
         this.setData({
             cart_count: storage.getCart().length
         });
+
+        wx.showToast({
+            title: '加入成功',
+            icon: 'success',
+            duration: 1500
+        })
     },
     handleBuy: function () {
         if (this.data.product_id == '') {
@@ -145,9 +157,13 @@ Page(Object.assign({}, Quantity, {
             sku_id: this.data.sku_id,
             product_id: this.data.product_id,
             product_name: this.data.product_name,
-            product_image: this.data.product_image,
+            product_image: constant.host + this.data.product_image[0],
             product_price: this.data.product_price,
-            product_quantity: this.data.product_quantity.quantity,
+            product_quantity: {
+                quantity: this.data.product_quantity.quantity,
+                min: 1,
+                max: 99999
+            },
             product_stock: this.data.product_quantity.max
         }]);
     }

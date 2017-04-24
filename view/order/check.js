@@ -3,22 +3,16 @@ const Quantity = require('../../component/quantity/index');
 
 Page(Object.assign({}, Quantity, {
     data: {
-        is_all: false,
-        is_select: false,
-        is_edit: false,
-        cart_total: 0,
         cart_list: storage.getCart()
     },
     onLoad: function () {
-
+        //console.log((11 * 568).toFixed(2));
     },
     onReady: function () {
 
     },
     onShow: function () {
-        this.setData({
-            cart_count: storage.getCart().length
-        });
+
     },
     onHide: function () {
 
@@ -34,11 +28,6 @@ Page(Object.assign({}, Quantity, {
     },
     onShareAppMessage: function () {
 
-    },
-    handleAll: function () {
-        this.setData({
-            is_all: !this.data.is_all
-        });
     },
     handleZanQuantityChange(event) {
         var componentId = event.componentId;

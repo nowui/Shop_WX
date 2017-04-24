@@ -1,16 +1,34 @@
+<import src="/component/quantity/index.wxml" />
 <view class="container">
-    <view class="header"></view>
-    <view class="footer">
-        <view class="footer-total">
-            <view class="footer-total-checkbox" bindtap="handleAll">
-                <icon class="checkbox" type="{{is_all ? 'success' : 'circle'}}" color="#c81623"/>
-            </view>
-            <view class="footer-total-text">
-                总计: ￥320.00
-            </view>
+  <view class="header"></view>
+  <view class="weui-panel weui-panel_access">
+    <view url="" class="weui-media-box weui-media-box_appmsg" wx:for="{{cart_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
+      <view class="cart-list-checkbox"  bindtap="handleAll">
+        <icon class="checkbox" type="{{is_all ? 'success' : 'circle'}}" color="{{is_all ? '#c81623' : '#dddddd'}}" />
+      </view>
+      <view class="weui-media-box__hd weui-media-box__hd_in-appmsg cart-list-image">
+        <image class="weui-media-box__thumb image" src="{{product.product_image}}" />
+      </view>
+      <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+        <view class="weui-media-box__title">{{product.product_name}}</view>
+        <view style="height: 33px;">
+          <template is="zan-quantity" data="{{ ...product.product_quantity, componentId: product.product_id }}" />
         </view>
-        <view class="footer-balance">
-            去结算
-        </view>
+      </view>
+      <view class="weui-cell__ft">￥{{product.product_quantity.quantity * product.product_price}}</view>
     </view>
+  </view>
+  <view class="footer">
+    <view class="footer-total">
+      <view class="footer-total-checkbox" bindtap="handleAll">
+        <icon class="checkbox" type="{{is_all ? 'success' : 'circle'}}" color="{{is_all ? '#c81623' : '#dddddd'}}" />
+      </view>
+      <view class="footer-total-text">
+        总计: ￥320.00
+      </view>
+    </view>
+    <view class="footer-balance" style="background-color: {{is_all ? '#c81623;' : '#dddddd;'}}">
+      去结算
+    </view>
+  </view>
 </view>

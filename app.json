@@ -1,19 +1,20 @@
 {
-  "pages":[
-    "view/category/index",
-    "view/product/index",
+  "pages": [
     "view/index/index",
     "view/cart/index",
     "view/my/index",
+    "view/order/check",
+    "view/category/index",
+    "view/product/index",
     "view/order/index",
     "view/deliver/index",
     "view/deliver/detail"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "微信商城",
-    "navigationBarTextStyle":"black",
+    "navigationBarTextStyle": "black",
     "backgroundColor": "#e8e8ed"
   },
   "tabBar": {

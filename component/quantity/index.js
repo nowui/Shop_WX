@@ -11,7 +11,7 @@ function handle(e, num) {
 
 function callback(componentId, quantity) {
     quantity = +quantity;
-    var e = {componentId, quantity};
+    var e = { componentId, quantity };
 
     if (this.handleZanQuantityChange) {
         this.handleZanQuantityChange(e);
