@@ -23,11 +23,12 @@ Page({
             data: {
                 product_name: '',
                 page_index: 1,
-                page_size: 10
+                page_size: 20
             },
             success: function (data) {
                 for (let i = 0; i < data.length; i++) {
                     data[i].product_image_original = constant.host + JSON.parse(data[i].product_image_original)[0];
+                    data[i].product_price = data[i].product_price.toFixed(2);
                 }
 
                 this.setData({
