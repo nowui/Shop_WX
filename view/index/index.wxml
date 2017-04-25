@@ -3,16 +3,7 @@
     <view class="page-section page-section-spacing swiper">
         <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="5000" duration="500">
             <swiper-item>
-                <image style="width: 100%; background-color: #ffffff;" />
-            </swiper-item>
-            <swiper-item>
-                <image style="width: 100%; background-color: #eeeeee;" />
-            </swiper-item>
-            <swiper-item>
-                <image style="width: 100%; background-color: #ffffff;" />
-            </swiper-item>
-            <swiper-item>
-                <image style="width: 100%; background-color: #eeeeee;" />
+                <image style="width: 514px; height: 150px; position: absolute; left: 50%; margin-left: -257px;" src="http://api.jiyiguan.nowui.com/upload/6a4dbae2ac824d2fb170638d55139666/original/00b1216e83b84226978d63703e7d597b.jpg" />
             </swiper-item>
         </swiper>
     </view>

@@ -109,7 +109,18 @@ Page(Object.assign({}, Quantity, {
     },
     handleCart: function () {
         wx.switchTab({
-            url: '/view/cart/index'
+            url: '/view/cart/index',
+            success: function () {
+                var page = getCurrentPages().pop();
+
+                console.log(page);
+
+                if (page == undefined || page == null) {
+                    return;
+                }
+
+                page.onShow();
+            }
         })
     },
     handleFavor: function () {
@@ -130,11 +141,7 @@ Page(Object.assign({}, Quantity, {
             product_name: this.data.product_name,
             product_image: constant.host + this.data.product_image[0],
             product_price: this.data.product_price,
-            product_quantity: {
-                quantity: this.data.product_quantity.quantity,
-                min: 1,
-                max: 99999
-            },
+            product_quantity: this.data.product_quantity,
             product_stock: this.data.product_quantity.max
         });
 

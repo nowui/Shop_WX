@@ -41,6 +41,11 @@ function getCart() {
     return JSON.parse(cart);
 }
 
+function setCart(cart) {
+    console.log(cart);
+    wx.setStorageSync(cart_key, JSON.stringify(cart));
+}
+
 function addCart(product) {
     var cartList = getCart();
     var isNotExit = true;
@@ -51,11 +56,13 @@ function addCart(product) {
         if (cart.product_id == product.product_id) {
             isNotExit = false;
 
+            console.log(product);
+
             cart.sku_id = product.sku_id;
             cart.product_name = product.product_name;
             cart.product_image = product.product_image;
             cart.product_price = product.product_price;
-            cart.product_quantity = product.product_quantity + cart.product_quantity;
+            cart.product_quantity.quantity = product.product_quantity.quantity + cart.product_quantity.quantity;
             cart.product_stock = product.product_stock;
         }
     }
@@ -78,6 +85,7 @@ module.exports = {
     setProduct: setProduct,
     removeProduct: removeProduct,
     getCart: getCart,
+    setCart: setCart,
     addCart: addCart,
     removeCart: removeCart
 };

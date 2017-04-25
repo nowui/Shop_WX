@@ -3,7 +3,7 @@ const Quantity = require('../../component/quantity/index');
 
 Page(Object.assign({}, Quantity, {
     data: {
-        cart_list: storage.getCart()
+        cart_list: []
     },
     onLoad: function () {
         //console.log((11 * 568).toFixed(2));
