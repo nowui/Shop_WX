@@ -1,8 +1,0 @@
-<view class="container">
-    <view class="header"></view>
-    <view class="footer">
-        <navigator url="/view/deliver/detail" class="footer-add">
-            新增收货地址
-        </navigator>
-    </view>
-</view>

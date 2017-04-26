@@ -6,6 +6,9 @@ Page({
         sliderLeft: 0,
         sliderWidth: 0
     },
+    onUnload: function () {
+
+    },
     onLoad: function () {
         var that = this;
         wx.getSystemInfo({
@@ -25,9 +28,6 @@ Page({
 
     },
     onHide: function () {
-
-    },
-    onUnload: function () {
 
     },
     onPullDownRefresh: function () {

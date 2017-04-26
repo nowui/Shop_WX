@@ -1,4 +1,5 @@
 const constant = require("../../util/constant.js");
+const notification = require('../../util/notification.js');
 const http = require("../../util/http.js");
 const storage = require("../../util/storage.js");
 const Quantity = require('../../component/quantity/index');
@@ -11,7 +12,7 @@ Page(Object.assign({}, Quantity, {
             min: 1,
             max: 99999
         },
-        window_width: 0,
+        window_width: getApp().globalData.window_width,
         tab_index: 0,
         slider_offset: 0,
         slider_left: 0,
@@ -24,6 +25,9 @@ Page(Object.assign({}, Quantity, {
         product_image_list: [],
         product_content: [],
         cart_count: []
+    },
+    onUnload: function () {
+
     },
     onLoad: function (option) {
         http.request({
@@ -50,15 +54,10 @@ Page(Object.assign({}, Quantity, {
             }.bind(this)
         });
 
-        wx.getSystemInfo({
-            success: function (res) {
-                this.setData({
-                    window_width: res.windowWidth,
-                    slider_left: (res.windowWidth / 2 - res.windowWidth / 2) / 2,
-                    slider_offset: res.windowWidth / 2 * this.data.tab_index,
-                    slider_width: res.windowWidth / 2
-                });
-            }.bind(this)
+        this.setData({
+            slider_left: 0,
+            slider_offset: this.data.window_width / 2 * this.data.tab_index,
+            slider_width: this.data.window_width / 2
         });
     },
     onReady: function () {
@@ -70,9 +69,6 @@ Page(Object.assign({}, Quantity, {
         });
     },
     onHide: function () {
-
-    },
-    onUnload: function () {
 
     },
     onPullDownRefresh: function () {
@@ -109,18 +105,7 @@ Page(Object.assign({}, Quantity, {
     },
     handleCart: function () {
         wx.switchTab({
-            url: '/view/cart/index',
-            success: function () {
-                var page = getCurrentPages().pop();
-
-                console.log(page);
-
-                if (page == undefined || page == null) {
-                    return;
-                }
-
-                page.onShow();
-            }
+            url: '/view/cart/index'
         })
     },
     handleFavor: function () {
@@ -149,18 +134,20 @@ Page(Object.assign({}, Quantity, {
             cart_count: storage.getCart().length
         });
 
+        notification.emit('notification_cart_index_load', '');
+
         wx.showToast({
             title: '加入成功',
             icon: 'success',
             duration: 1500
-        })
+        });
     },
     handleBuy: function () {
         if (this.data.product_id == '') {
             return;
         }
 
-        storage.addProduct([{
+        storage.setProduct([{
             sku_id: this.data.sku_id,
             product_id: this.data.product_id,
             product_name: this.data.product_name,
@@ -173,5 +160,9 @@ Page(Object.assign({}, Quantity, {
             },
             product_stock: this.data.product_quantity.max
         }]);
+
+        wx.navigateTo({
+            url: '/view/order/check'
+        });
     }
 }));

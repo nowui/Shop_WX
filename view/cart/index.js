@@ -1,3 +1,4 @@
+const notification = require('../../util/notification.js');
 const storage = require("../../util/storage.js");
 const Quantity = require('../../component/quantity/index');
 
@@ -9,13 +10,35 @@ Page(Object.assign({}, Quantity, {
         cart_total: parseFloat(0).toFixed(2),
         cart_list: storage.getCart()
     },
+    onUnload: function () {
+        notification.remove('notification_cart_index_load', this);
+    },
     onLoad: function () {
+        notification.on('notification_cart_index_load', this, function (data) {
+            this.handleLoad();
+        });
 
+        this.handleLoad();
     },
     onReady: function () {
 
     },
     onShow: function () {
+
+    },
+    onHide: function () {
+
+    },
+    onPullDownRefresh: function () {
+
+    },
+    onReachBottom: function () {
+
+    },
+    onShareAppMessage: function () {
+
+    },
+    handleLoad: function () {
         var cart_list = storage.getCart();
         var is_all = cart_list.length > 0;
         var is_select = false;
@@ -41,21 +64,6 @@ Page(Object.assign({}, Quantity, {
             cart_total: cart_total,
             cart_list: cart_list
         });
-    },
-    onHide: function () {
-
-    },
-    onUnload: function () {
-
-    },
-    onPullDownRefresh: function () {
-
-    },
-    onReachBottom: function () {
-
-    },
-    onShareAppMessage: function () {
-
     },
     handleSingle: function (event) {
         var is_all = true;

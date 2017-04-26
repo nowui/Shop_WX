@@ -2,47 +2,17 @@
   <view class="header"></view>
   <view class="page-section page-section-spacing swiper">
     <swiper indicator-dots="true" indicator-active-color="#c81623" autoplay="false" interval="5000" duration="500">
-      <swiper-item>
-        <image style="width: 514px; height: 150px; position: absolute; left: 50%; margin-left: -257px;" src="http://api.jiyiguan.nowui.com/upload/6a4dbae2ac824d2fb170638d55139666/original/00b1216e83b84226978d63703e7d597b.jpg" />
+      <swiper-item wx:for="{{banner_list}}" wx:for-item="banner" wx:key="{{banner.banner_id}}">
+        <image style="width: 514px; height: 150px; position: absolute; left: 50%; margin-left: -257px;" src="{{banner.banner_image}}" />
       </swiper-item>
     </swiper>
   </view>
   <view class="index-category">
-    <navigator url="/view/category/index" class="index-category-item">
-      <view class="index-category-item-icon" style="background: #73b4ef;">
-        <image class="index-category-item-icon-image" src="/image/discover.png" />
+    <navigator url="/view/category/index?category_id={{category.category_id}}" class="index-category-item" wx:for="{{category_list}}" wx:for-item="category" wx:key="{{category.category_id}}">
+      <view class="index-category-item-icon" style="background: {{category.category_color}};">
+        <image class="index-category-item-icon-image" src="{{category.category_image}}" />
       </view>
-      肠内营养
-    </navigator>
-    <navigator url="/view/category/index" class="index-category-item">
-      <view class="index-category-item-icon" style="background: #e78ab0;">
-        <image class="index-category-item-icon-image" src="/image/form.png" />
-      </view>
-      快康系列
-    </navigator>
-    <navigator url="/view/category/index" class="index-category-item">
-      <view class="index-category-item-icon" style="background: #7acfa6;">
-        <image class="index-category-item-icon-image" src="/image/present.png" />
-      </view>
-      特殊奶粉
-    </navigator>
-    <navigator url="/view/category/index" class="index-category-item">
-      <view class="index-category-item-icon" style="background: #ffcb63;">
-        <image class="index-category-item-icon-image" src="/image/punch.png" />
-      </view>
-      理疗辅助
-    </navigator>
-    <navigator url="/view/category/index" class="index-category-item">
-      <view class="index-category-item-icon" style="background: #9f8bea;">
-        <image class="index-category-item-icon-image" src="/image/shop.png" />
-      </view>
-      补血系列
-    </navigator>
-    <navigator url="/view/category/index" class="index-category-item">
-      <view class="index-category-item-icon" style="background: #fd666b;">
-        <image class="index-category-item-icon-image" src="/image/apps.png" />
-      </view>
-      所有商品
+      {{category.category_name}}
     </navigator>
   </view>
   <!--<view class="index-product margin-top">
@@ -52,10 +22,10 @@
             <view class="index-product-card-price">￥{{product.product_price}}</view>
         </navigator>
   </view>-->
-    <navigator url="/view/product/index?product_id={{product.product_id}}" class="category-right-item" style="width: {{(window_width - 17) / 2}}px; margin: 5px 0 0 5px;" wx:for="{{product_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
-      <image style="width: {{(window_width - 17) / 2}}px; height: {{(window_width - 17) / 2}}px;" src="{{product.product_image_original}}" />
+    <navigator url="/view/product/index?product_id={{product.product_id}}" class="category-right-item" style="width: {{(window_width - 23) / 2}}px; margin: 7px 0 0 7px;" wx:for="{{product_list}}" wx:for-item="product" wx:key="{{product.product_id}}">
+      <image style="width: {{(window_width - 22) / 2}}px; height: {{(window_width - 22) / 2}}px;" src="{{product.product_image_original}}" />
       <view class="category-right-item-name">{{product.product_name}}</view>
       <view class="category-right-item-price">￥{{product.product_price}}</view>
     </navigator>
-    <view style="float: left; width: 100%; margin-top: 5px;"></view>
+    <view style="float: left; width: 100%; margin-top: 8px;"></view>
 </view>

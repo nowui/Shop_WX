@@ -2,6 +2,9 @@ Page({
     data: {
 
     },
+    onUnload: function () {
+
+    },
     onLoad: function () {
 
     },
@@ -12,9 +15,6 @@ Page({
 
     },
     onHide: function () {
-
-    },
-    onUnload: function () {
 
     },
     onPullDownRefresh: function () {

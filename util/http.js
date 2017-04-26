@@ -1,7 +1,12 @@
 const constant = require("./constant.js");
 const storage = require("./storage.js");
+const util = require("./util.js");
 
 function request(config) {
+    wx.showLoading({
+        title: '加载中..',
+    });
+
     wx.request({
         url: constant.host + config.url,
         method: 'POST',
@@ -13,19 +18,23 @@ function request(config) {
             'Version': '1.0.0'
         },
         data: config.data,
-        success: function(response) {
+        success: function (response) {
+            wx.hideLoading();
+
             if (response.data.code == 200) {
                 config.success(response.data.data);
             } else {
-                wx.showModal({
-                    content: '网络发生错误',
-                    confirmColor: constant.color,
-                    showCancel: false,
-                    success: function () {
-
-                    }
+                util.showFailToast({
+                    title: response.data.message
                 });
             }
+        },
+        fail: function () {
+            wx.hideLoading();
+
+            util.showFailToast({
+                title: '网络出现错误'
+            });
         }
     });
 }

@@ -7,8 +7,8 @@
     "view/category/index",
     "view/product/index",
     "view/order/index",
-    "view/deliver/index",
-    "view/deliver/detail"
+    "view/delivery/index",
+    "view/delivery/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
