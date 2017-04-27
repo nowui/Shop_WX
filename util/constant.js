@@ -1,5 +1,5 @@
 const constant = {
-    host: 'http://localhost:8080',
+    host: 'http://172.31.16.209:8080',
     // host: 'https://api.jiyiguan.nowui.com',
     platform: 'WX',
     version: '1.0.0',
@@ -35,6 +35,27 @@ const constant = {
         category_name: '补血系列',
         category_color: '#9f8bea',
         category_image: '/image/shop.png'
+    }],
+    order_status_list: [{
+        order_status_value: '',
+        order_status_name: '全部订单',
+        order_status_image: ''
+    }, {
+        order_status_value: 'WAIT_PAY',
+        order_status_name: '代付款',
+        order_status_image: '/image/pay.png'
+    }, {
+        order_status_value: 'WAIT_SEND',
+        order_status_name: '代发货',
+        order_status_image: '/image/deliver.png'
+    }, {
+        order_status_value: 'WAIT_RECEIVE',
+        order_status_name: '代收货',
+        order_status_image: '/image/deliver.png'
+    }, {
+        order_status_value: 'FINISH',
+        order_status_name: '已完成',
+        order_status_image: '/image/comment.png'
     }]
 }
 

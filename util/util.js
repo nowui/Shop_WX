@@ -12,6 +12,7 @@ function showSuccessToast(config) {
     wx.showToast({
         title: config.title,
         icon: 'success',
+        mask: true,
         duration: constant.duration,
         success: config.success
     });

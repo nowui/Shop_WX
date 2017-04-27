@@ -27,7 +27,7 @@
   margin-right: 10px;
 }
 
-.footer-balance {
+.footer-pay {
   float: left;
   width: 30%;
   height: 50px;

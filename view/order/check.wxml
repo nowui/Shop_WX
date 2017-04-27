@@ -1,7 +1,7 @@
 <view class="container">
   <view class="header"></view>
   <view class="weui-panel weui-panel_access">
-    <navigator url="" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
+    <navigator url="/view/delivery/index?is_select=true" class="weui-media-box weui-media-box_appmsg" hover-class="weui-cell_active">
       <view class="weui-media-box__bd weui-media-box__bd_in-appmsg" style="height: 41px;">
         <view class="weui-media-box__title">{{is_delivery ? delivery.delivery_name : ''}} {{is_delivery ? delivery.delivery_phone : ''}}</view>
         <view class="weui-media-box__desc address">{{is_delivery ? delivery.delivery_address : ''}}</view>
@@ -46,7 +46,7 @@
         总计: ￥{{total}}
       </view>
     </view>
-    <view class="footer-balance" style="background-color: #1AAD19;">
+    <view class="footer-pay" style="background-color: {{is_play ? '#1AAD19;' : '#dddddd;'}}" bindtap="handlePay">
       立即支付
     </view>
   </view>

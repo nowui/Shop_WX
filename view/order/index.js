@@ -1,24 +1,36 @@
+const constant = require("../../util/constant.js");
+const http = require("../../util/http.js");
+
 Page({
     data: {
-        tabs: ["全部订单", "代付款", "待收货", "已收货"],
-        activeIndex: 0,
-        sliderOffset: 0,
-        sliderLeft: 0,
-        sliderWidth: 0
+        order_status_list: constant.order_status_list,
+        tab_index: 0,
+        slider_offset: 0,
+        slider_left: 0,
+        slider_width: 0,
+        order_list: []
     },
     onUnload: function () {
 
     },
     onLoad: function () {
-        var that = this;
-        wx.getSystemInfo({
-            success: function(res) {
-                that.setData({
-                    sliderLeft: (res.windowWidth / that.data.tabs.length - res.windowWidth / that.data.tabs.length) / 2,
-                    sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex,
-                    sliderWidth: res.windowWidth / that.data.tabs.length
+        this.setData({
+            slider_left: 0,
+            slider_offset: this.data.window_width / 2 * this.data.tab_index,
+            slider_width: this.data.window_width / 2
+        });
+
+        http.request({
+            url: '/order/list',
+            data: {
+                page_index: 0,
+                page_size: 0
+            },
+            success: function (data) {
+                this.setData({
+                    order_list: data
                 });
-            }
+            }.bind(this)
         });
     },
     onReady: function () {
@@ -39,10 +51,10 @@ Page({
     onShareAppMessage: function () {
 
     },
-    tabClick: function (e) {
+    handleTab: function (event) {
         this.setData({
-            sliderOffset: e.currentTarget.offsetLeft,
-            activeIndex: e.currentTarget.id
+            slider_offset: event.currentTarget.offsetLeft,
+            tab_index: event.currentTarget.id
         });
     }
 });

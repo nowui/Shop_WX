@@ -24,14 +24,14 @@
         </view>
         <view class="weui-cell__bd">
           <view class="weui-select weui-select_in-select-after">
-            <input class="weui-input" placeholder="请选择省/市/区" disabled="false" value="{{delivery_province}}{{delivery_city}}{{delivery_area}}" />
+            <text class="weui-input">{{delivery_province}}{{delivery_city}}{{delivery_area}}</text>
           </view>
         </view>
       </view>
       <view class="weui-cells weui-cells_after-title">
         <view class="weui-cell">
           <view class="weui-cell__bd">
-            <textarea name="delivery_address" class="weui-textarea" placeholder="请输入详细地址" style="height: 3.3em" value="{{delivery_address}}" />
+            <textarea name="delivery_street" class="weui-textarea" placeholder="请输入详细地址" style="height: 3.3em" value="{{delivery_street}}" />
           </view>
         </view>
       </view>

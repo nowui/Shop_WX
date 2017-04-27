@@ -28,7 +28,7 @@
         总计: ￥{{cart_total}}
       </view>
     </view>
-    <view class="footer-balance" style="background-color: {{is_select ? '#c81623;' : '#dddddd;'}}" bindtap="handleBalance">
+    <view class="footer-balance" style="background-color: {{is_select ? color : '#dddddd;'}}" bindtap="handleBalance">
       去结算
     </view>
   </view>

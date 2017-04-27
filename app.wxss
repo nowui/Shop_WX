@@ -132,3 +132,14 @@
   padding-top: 60px;
   text-align: center;
 }
+
+.checkbox {
+  position: absolute;
+  top: 50%;
+  margin-top: -12px;
+  left: 50%;
+  margin-left: -12px;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+}

@@ -20,7 +20,6 @@ Page({
         delivery_area: "",
         province_city_area: [0, 0, 0],
         delivery_street: '',
-        delivery_address: '',
         delivery_is_default: false
     },
     onUnload: function () {
@@ -163,7 +162,7 @@ Page({
                         break;
                     }
                 }
-                    console.log(city_index);
+                console.log(city_index);
 
                 for (var i = 0; i < china.children[province_index].children[city_index].children.length; i++) {
                     if (china.children[province_index].children[city_index].children[i].name == data.delivery_area) {
@@ -180,7 +179,6 @@ Page({
                     delivery_city: data.delivery_city,
                     delivery_area: data.delivery_area,
                     delivery_street: data.delivery_street,
-                    delivery_address: data.delivery_address,
                     delivery_is_default: data.delivery_is_default
                 });
             }.bind(this)
@@ -189,7 +187,7 @@ Page({
     handleSubmit: function (event) {
         var delivery_name = event.detail.value.delivery_name;
         var delivery_phone = event.detail.value.delivery_phone;
-        var delivery_address = event.detail.value.delivery_address;
+        var delivery_street = event.detail.value.delivery_street;
         var delivery_is_default = event.detail.value.delivery_is_default;
 
         if (delivery_name == '') {
@@ -224,7 +222,7 @@ Page({
             return;
         }
 
-        if (delivery_address == '') {
+        if (delivery_street == '') {
             util.showFailToast({
                 title: '请输入详细地址'
             });
@@ -241,7 +239,7 @@ Page({
                 delivery_province: this.data.delivery_province,
                 delivery_city: this.data.delivery_city,
                 delivery_area: this.data.delivery_area,
-                delivery_address: delivery_address,
+                delivery_street: delivery_street,
                 delivery_is_default: delivery_is_default
             },
             success: function (data) {

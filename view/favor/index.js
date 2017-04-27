@@ -1,12 +1,12 @@
 Page({
     data: {
-        
+
     },
     onUnload: function () {
 
     },
     onLoad: function () {
-        
+
     },
     onReady: function () {
 
@@ -25,15 +25,5 @@ Page({
     },
     onShareAppMessage: function () {
 
-    },
-    handleHome: function () {
-        wx.switchTab({
-            url: '/view/index/index'
-        })
-    },
-    handleOrder: function () {
-        wx.redirectTo({
-            url: '/view/order/index'
-        });
     }
 });

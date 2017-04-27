@@ -1,14 +1,16 @@
 {
   "pages": [
+    "view/order/index",
     "view/index/index",
     "view/cart/index",
     "view/my/index",
-    "view/order/check",
     "view/category/index",
     "view/product/index",
-    "view/order/index",
+    "view/order/check",
+    "view/order/result",
     "view/delivery/index",
-    "view/delivery/detail"
+    "view/delivery/detail",
+    "view/favor/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

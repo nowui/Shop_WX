@@ -4,7 +4,14 @@ const util = require("./util.js");
 
 function request(config) {
     wx.showLoading({
+        title: '加载中..'
+    });
+
+    wx.showToast({
         title: '加载中..',
+        icon: 'loading',
+        mask: true,
+        duration: constant.duration * 10
     });
 
     wx.request({
@@ -19,7 +26,7 @@ function request(config) {
         },
         data: config.data,
         success: function (response) {
-            wx.hideLoading();
+            wx.hideToast();
 
             if (response.data.code == 200) {
                 config.success(response.data.data);

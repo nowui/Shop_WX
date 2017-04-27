@@ -1,9 +1,11 @@
+const constant = require("../../util/constant.js");
 const notification = require('../../util/notification.js');
 const storage = require("../../util/storage.js");
 const Quantity = require('../../component/quantity/index');
 
 Page(Object.assign({}, Quantity, {
     data: {
+        color: constant.color,
         is_all: false,
         is_select: false,
         is_edit: false,

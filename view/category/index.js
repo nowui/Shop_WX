@@ -70,11 +70,13 @@ Page({
     handleCategory: function (event) {
         var category_id = event.currentTarget.id;
         var product_list = [];
+
         for (var i = 0; i < this.data.list.length; i++) {
             if (this.data.list[i].category_id == category_id || category_id == '') {
                 product_list.push(this.data.list[i]);
             }
         }
+        
         this.setData({
             category_id: category_id,
             product_list: product_list
